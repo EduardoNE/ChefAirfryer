@@ -139,6 +139,10 @@ div.img, #home {
 	font-weight: bold;
 }
 
+#bemvindo p {
+	font-size: 16px;
+}
+
 
  /* -------------------------------------------
  SLIDER
@@ -398,6 +402,15 @@ h1.title {
 	top: 0;
 	height: 100%;
 	right: 11px;
+}
+
+.icon-whatsapp {
+	line-height: 44px;
+}
+
+.icon-whatsapp img {
+	width: 34px;
+	margin-top: 5px;
 }
 
 
