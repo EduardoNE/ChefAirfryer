@@ -1,0 +1,57 @@
+<ion-view  id="receita">
+<ion-nav-title><img class='logo-header' src='img/logo-header.png' /></ion-nav-title>
+  <ion-content>
+    
+    <div class="item-receita">
+
+      <div class="img"><img ng-src="{{receita.imagem}}"></div>
+
+      <div class="padding nome-receita">
+        <h1 ng-bind-html="receita.nome"></h1>
+      </div>
+
+      <div class="item item-divider item-icon-right">
+        Ingredientes <i class="icon ion-ios7-compose-outline"></i>
+      </div>
+
+      <div class="titulo-desc padding">
+        <p ng-bind-html="receita.quantidades">
+        </p>
+      </div>
+
+      <div class="item item-divider item-icon-right">
+        Como fazer <i class="icon ion-ios7-chatbubble-outline"></i>
+      </div>
+
+      <div class="titulo-desc padding">
+        <p ng-bind-html="receita.receita">
+        </p>
+      </div>
+
+
+      <div class="infos">
+        <div class="row">
+          <div class="col col-33 icon ion-clock"> {{receita.tempo}}min</div>
+          <div class="col col-33 icon ion-flame"> {{receita.temperatura}}º</div>
+          <div class="col col-33 icon ion-person"> {{receita.serve}}</div>
+        </div>
+      </div>
+
+
+      <div class="bts">
+        <div class="button-bar">
+          <button ng-click="Facebook();" class="button button-positive ion-social-facebook"></button>
+          <button ng-click="Email();" class="button button-royal ion-share"></button>
+          <button ng-click="Whatsapp();" class="button button-balanced ion-social-whatsapp-outline"></button>
+          <button ng-click="euFiz()" class="button button-assertive {{feito}}"></button>
+          <button ng-click="favoritar()" class="button button-energized ion-ios7-star{{favoritado}}"></button>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>
+
+
+

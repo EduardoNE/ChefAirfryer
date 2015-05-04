@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>958BB9A6-168E-4E31-A68D-C179E174B19B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Chef Airfryer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>455EBC4CCD16B209D3CA50FAD2F1186DA976835F</key>
+		<string>https://github.com/EduardoNE/chefAirfryer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/Chef Airfryer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>455EBC4CCD16B209D3CA50FAD2F1186DA976835F</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/EduardoNE/chefAirfryer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>455EBC4CCD16B209D3CA50FAD2F1186DA976835F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>455EBC4CCD16B209D3CA50FAD2F1186DA976835F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>chefAirfryer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

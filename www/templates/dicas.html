@@ -1,0 +1,12 @@
+<ion-view id="extras">
+<ion-nav-title>{{titulo}}</ion-nav-title>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-avatar" ng-repeat="receita in receitas" type="item-text-wrap" href="#/tab/dica/{{receita.id}}">
+        <img ng-src="{{receita.imagem}}">
+        <h2 ng-bind-html="receita.nome"></h2>
+        <i class="icon ion-chevron-right seta"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

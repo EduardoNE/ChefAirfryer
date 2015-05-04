@@ -1,0 +1,561 @@
+/* 
+
+Nome do APP: Chef AirFryer
+Autor: Phillip Cardoso | Agência Novos Elementos
+Versão: 1.0
+
+ */
+
+ /* CONFIGURACOES GLOBAIS */
+
+.view-container {
+	background-color: #000;
+}
+
+/* FONTES */
+
+h1, h2, h3, h4, p {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.box {
+	height: 100%;
+}
+
+
+
+ /* HEADER */
+
+ .bar.bar-header {
+ 	/*background: url(../img/bg-header.png) top center !important;*/
+ 	background: transparent;
+ 	background-repeat: repeat-x;
+ }
+
+ .bar.bar-header {
+ 	background-color: #ff0000;
+ }
+
+ .bar.bar-stable .title {
+ 	color: #fff;
+ 	font-weight: 600;
+ 	font-size: 22px !important
+ }
+
+ .bar-stable .button.button-clear {
+ 	color: #fff;
+ }
+
+ .bar .button.button-icon .icon::before, .bar .button.button-icon::before, .bar .button.button-icon.icon-left::before, .bar .button.button-icon.icon-right::before {
+ 	font-size: 30px;
+	line-height: 22px;
+ }
+
+ .ud {
+	color: #000;
+	background-color: #ffAD33;
+	line-height: 14px;
+	top: -10px;
+	left: -10px;
+ }
+
+ /* BARRA MENU */
+
+
+
+ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+ 	color: #ff0000;
+ }
+
+
+ /* -------------------------------------------
+ HOME
+ ------------------------------------------- */
+
+ #home .has-header {
+ 	top: 0px;
+ }
+
+ #home .has-tabs {
+ 	bottom: 0px;
+ }
+
+ #home .col,
+ #home .row {
+ 	padding: 0;
+ 	position: relative;
+ }
+
+ .logo-header {
+	height: auto;
+	margin-top: 5px;
+	max-width: 100%;
+	max-height: 34px;
+ }
+
+ .title {
+ 	font-family: 'Montserrat', sans-serif;
+ 	font-weight: bold;
+ 	font-size: 28px !important;
+ 	line-height: 50px !important;
+ }
+
+ .gradiente {
+	color: #fff;
+	font-size: 25px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+
+	background: rgba(0,0,0,0);
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 67%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(67%, rgba(0,0,0,1)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 67%);
+	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 67%);
+	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 67%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 67%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+
+}
+
+.bt {
+	margin: 10px;
+}
+
+.bt.d {
+	text-align: right;
+}
+
+div.img, #home {
+	background: url('../img/loading.gif') no-repeat center center;
+	min-height: 200px;
+}
+
+#bemvindo h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+ /* -------------------------------------------
+ SLIDER
+ ------------------------------------------- */
+
+#slider{
+	margin-top: 64px;
+}
+
+#slider img {
+	height: auto;
+	width: 100%;
+}
+
+.slider-pager {
+	display: none !important;
+}
+
+.slide .tag {
+	text-align: right;
+	color: #ff0000;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+.slide .titulo {
+	text-align: right;
+	color: #fff;
+	font-size: 24px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 6px 10px 10px;
+}
+
+.gradiente-slider {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.01) 1%, rgba(0,0,0,1) 81%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0.01)), color-stop(81%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,1) 81%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,1) 81%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,1) 81%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,1) 81%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+#slider .slider {
+	border-bottom: 5px solid #ff0000;
+}
+
+
+ /* -------------------------------------------
+ CATEGORIAS
+ ------------------------------------------- */
+
+
+#abc,
+#acompanhamentos,
+#bolinhos-salgados,
+#carnes,
+#doces-sobremesas,
+#fitness,
+#industrializados,
+#paes-bolos-mufies,
+#peixes-frutos-mar,
+#kids,
+#dicas,
+#indica,
+#amigos {
+	height: 100px;
+	overflow: hidden;
+}
+
+#abc img.img,
+#acompanhamentos img.img,
+#bolinhos-salgados img.img,
+#carnes img.img,
+#doces-sobremesas img.img,
+#fitness img.img,
+#industrializados img.img,
+#paes-bolos-mufies img.img,
+#peixes-frutos-mar img.img,
+#kids img.img,
+#dicas img.img,
+#indica img.img,
+#amigos img.img {
+	height: 100%;
+	width: auto;
+}
+
+#dicas-indica {
+	margin-top: 20px;
+}
+
+
+
+ /* -------------------------------------------
+ PAGINAS INTERNAS
+ ------------------------------------------- */
+
+
+.input-label {
+	font-size: 14px;
+}
+
+h1.title {
+	margin: 0 !important;
+}
+
+.has-tabs {
+	bottom: 47px;
+}
+
+.item-thumbnail-left .item-content > img:first-child {
+	background: url('../img/avatar.jpg') #FFF no-repeat center center;
+	background-size: 100% 100%;
+}
+
+
+
+ /* -------------------------------------------
+ GELADEIRA
+ ------------------------------------------- */
+
+#geladeira .has-tabs {
+	bottom: 112px;
+	top: 64px
+}
+
+#geladeira .item {
+	padding-left: 10px;
+}
+
+.bt-geladeira {
+	position: absolute;
+	bottom: 0;
+	margin: 10px 10px 60px 10px !important;
+}
+
+.item-input-wrapper {
+	background-color: #fff;
+}
+
+#geladeira .bar-footer {
+	bottom: 48px;
+	background-color: #ffffff;
+	height: 68px;
+}
+
+.bt-red {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	background-color: #ff0000 !important;
+	border-color: #ff0000;
+	color: #fff;
+}
+
+#geladeira .item-input-wrapper,
+#pesquisar .item-input-wrapper {
+	margin-top: 0 !important;
+}
+
+.bar .button {
+	font-size: 14px;
+	color: #fff;
+	margin-top: 4px; 
+	margin-bottom: 5px;
+	height: 50px;
+}
+
+
+
+/* -------------------------------------------
+ RECEITAS
+ ------------------------------------------- */
+
+.item-receita .img img {
+	height: auto;
+	width: 100%;
+}
+
+.bts {
+	padding-bottom: 30px;
+}
+
+.bts button {
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 0 !important;
+	border: 0;
+	padding: 20px !important;
+}
+
+.infos {
+	background-color: #f5f5f5;
+	color: #ff0000;
+	margin: 20px 0;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.infos .icon {
+	text-align: center;
+	font-size: 18px;
+}
+
+.nome-receita h1 {
+	font-size: 22px;
+	margin: 0;
+}
+
+.titulo-desc p {
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 20px;
+}
+
+.item-divider {
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+	padding-left: 10px;
+}
+
+.bts button.button::before {
+	font-size: 35px;
+}
+
+.bts button.button {
+	font-size: 14px;
+	line-height: 26px;
+}
+
+.item-divider.extras {
+	background-color: #ff0000;
+	color: #fff;
+	text-align: right;
+}
+
+.seta {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	right: 11px;
+}
+
+
+ /* -------------------------------------------
+ ATUALIZAR
+ ------------------------------------------- */
+ .bt-atualizar a {
+ 	font-size: 24px !important;	
+ 	font-family: 'Montserrat', sans-serif;
+ }
+
+ .numnovas {
+	font-size: 20px !important;
+	font-family: 'Montserrat', sans-serif;
+	margin: 30px 0;
+	color: #ff0000;
+ }
+
+
+ /* -------------------------------------------
+ BUSCAR
+ ------------------------------------------- */
+
+ .bt-buscar {
+ 	margin-top: 0 !important;
+ }
+
+ /* -------------------------------------------
+ PESQUISAR
+ ------------------------------------------- */
+
+ #pesquisar .item-content {
+ 	padding-left: 0 !important;
+	min-height: 76px !important;
+ }
+
+
+
+/* -------------------------------------------
+ EXTRAS
+ ------------------------------------------- */
+
+ 
+#extras .item-complex .item-content {
+	padding-top: 26px;
+	padding-bottom: 26px;
+}
+
+.bt-shared {
+	font-size: 18px !important;
+	line-height: 42px !important;
+}
+
+.extras .button-bar > .button::before, .extras .button-bar > .button .icon::before {
+	line-height: 24px;
+	margin-right: 10px;
+}
+
+
+
+ /* -------------------------------------------
+ LISTAS
+ ------------------------------------------- */
+
+/*
+.internas .item {
+ 	margin-bottom: 20px;
+ 	border: 0;
+ 	padding: 0;
+}
+
+.internas .item-content {
+	padding: 0 0 15px 0 !important;
+}
+
+.internas .img img {
+	max-width: 100%;
+	height: auto;
+}
+
+.item .img {
+ 	overflow: hidden;
+ 	position: relative;
+}
+
+.internas .titulo-desc {
+	padding: 0 10px;
+}
+
+.internas.lista .titulo-desc {
+	background-color: #000;
+}
+
+.titulo-desc h2 .ng-binding {
+	float: left;
+	word-wrap: break-word;
+}
+
+.titulo-desc h2 i {
+	float: right;
+}
+
+.internas.lista h2 {
+	margin: -4px 0 0 0;
+	color: #fff;
+	padding: 10px 0 4px 0;
+}
+
+.item-contato .item {
+ 	border-bottom: 1px solid #ccc;
+ }
+
+.item-contato .item:first {
+	border-top: 1px solid #ccc;
+}
+
+.canais label {
+	margin: 0 !important;
+}
+
+.item-content p {
+ 	white-space: normal;
+}
+
+.item-avatar .item-content > img {
+	border-radius: 10%;
+}
+
+button.curtir {
+	position: absolute;
+	bottom: 8px;
+	left: 4px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #000;
+	color: red;
+	min-width: 40px;
+	width: 40px;
+	min-height: 40px;
+	height: 40px;
+	padding: 0;
+}
+
+.num-likes {
+	background: url(../img/bg-curtidas.svg) top center no-repeat;
+	background-size: 46px 23px;
+	color: #000;
+	position: absolute;
+	width: 45px;
+	height: 24px;
+	bottom: 14px;
+	left: 40px;
+	padding: 2px 2px 3px 7px;
+	z-index: 999;
+	font-size: 11px;
+}
+
+*/
+
+

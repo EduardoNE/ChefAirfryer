@@ -1,0 +1,184 @@
+<ion-view id="home">
+  <ion-nav-buttons side="left">
+    <a href="#/tab/update">
+      <button class="button button-icon button-clear ion-upload" menu-toggle="right">
+        {{hasUpdates}}
+      </button>
+    </a>
+  </ion-nav-buttons>
+  <ion-nav-title><img class='logo-header' src='img/logo-header.png' /></ion-nav-title>
+  <ion-content id="topheader">
+
+    <!-- SLIDER -->
+    <div id="slider">
+      <ion-slide-box auto-play="true" does-continue="true" slide-interval="4000" on-slide-changed="slideHasChanged($index)">
+        <ion-slide ng-repeat="slide in slides" ng-click="SendOut(slide.id,slide.link)">
+
+          <div class="box slide">
+            <div class="gradiente-slider">
+              <div class="tag">Destaque</div>
+              <div class="titulo">{{slide.titulo}}</div>
+            </div>
+            <img ng-src="{{slide.imagem}}" />
+          </div>
+
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+
+    <!-- ABC -->
+    <div id="abc">
+      <div class="row box">
+        <a href="#/tab/receitas/3" class="col box abc" style="background: url('img/home/bg-abc.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">ABC</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Acompanhamentos -->
+    <div id="acompanhamentos">
+      <div class="row box">
+        <a href="#/tab/receitas/7" class="col box acompanhamentos" style="background: url('img/home/bg-acompanhamentos.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Acompanhamentos</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bolinhos e Salgados -->
+    <div id="bolinhos-salgados">
+      <div class="row box">
+        <a href="#/tab/receitas/5" class="col box bolinhos-salgados" style="background: url('img/home/bg-bolinhos-salgados.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Salgados e Petiscos</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Carnes -->
+    <div id="carnes">
+      <div class="row box">
+        <a href="#/tab/receitas/1" class="col box abc" style="background: url('img/home/bg-carnes.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Carnes</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Doces e Sobremesas -->
+    <div id="doces-sobremesas">
+      <div class="row box">
+        <a href="#/tab/receitas/4" class="col box doces-sobremesas" style="background: url('img/home/bg-doces-sobremesas.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Doces e Sobremesas</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Fitness -->
+    <div id="fitness">
+      <div class="row box">
+        <a href="#/tab/receitas/9" class="col box fitness" style="background: url('img/home/bg-fitness.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Fitness</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Industrializados -->
+    <div id="industrializados">
+      <div class="row box">
+        <a href="#/tab/receitas/6" class="col box industrializados" style="background: url('img/home/bg-industrializados.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Industrializados</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Pães Bolos Mufies -->
+    <div id="paes-bolos-mufies">
+      <div class="row box">
+        <a href="#/tab/receitas/8" class="col box paes-bolos-mufies" style="background: url('img/home/bg-paes-bolos-mufies.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Pães, Bolos e Mufies</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Peixes e Frutos do Mar -->
+    <div id="peixes-frutos-mar">
+      <div class="row box">
+        <a href="#/tab/receitas/2" class="col box peixes-frutos-mar" style="background: url('img/home/bg-peixes-frutos-mar.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Peixes e Frutos do Mar</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Kids -->
+    <div id="kids">
+      <div class="row box">
+        <a href="#/tab/receitas/10" class="col box kids" style="background: url('img/home/bg-kids.jpg') #000; background-size: 100%; position: relative;">
+          <div class="gradiente">
+            <div class="bt">Kids</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+
+
+    <!-- EXTRAS -->
+    <div class="item item-divider extras">
+      EXTRAS
+    </div>
+
+
+    <!-- Dicas -->
+    <div id="dicas">
+      <div class="row box">
+        <a href="#/tab/dicas/11" class="col box dicas" style="background: url('img/home/bg-dicas.jpg') #000; background-size: 100%; position: relative;">
+            <div class="gradiente">
+              <div class="bt">Dicas</div>
+            </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Descubra -->
+    <div id="indica">
+      <div class="row box">
+        <a href="#/tab/dicas/12" class="col box descubra" style="background: url('img/home/bg-descubra.jpg') #000; background-size: 100%; position: relative;">
+            <div class="gradiente">
+              <div class="bt">Descubra</div>
+            </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Descubra -->
+    <div id="amigos">
+      <div class="row box">
+        <a href="#/tab/dicas/13" class="col box amigos" style="background: url('img/home/bg-amigos.jpg') #000; background-size: 100%; position: relative;">
+            <div class="gradiente">
+              <div class="bt">Amigos do Chef</div>
+            </div>
+        </a>
+      </div>
+    </div>
+
+    
+
+
+  </ion-content>
+</ion-view>

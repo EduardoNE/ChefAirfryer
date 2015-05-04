@@ -1,0 +1,30 @@
+<ion-view id="receita" class="extra">
+<ion-nav-title><img class='logo-header' src='img/logo-header.png' /></ion-nav-title>
+  <ion-content>
+    
+    <div class="item-receita">
+
+      <div class="img"><img ng-src="{{receita.imagem}}"></div>
+
+      <div class="padding nome-receita">
+        <h1 ng-bind-html="receita.nome"></h1>
+      </div>
+
+      <div class="titulo-desc padding">
+        <p ng-bind-html="receita.receita">
+        </p>
+      </div>
+
+      <div class="bts padding">
+        <div class="button-bar">
+          <button ng-click="shareAnywhere();" class="button button-positive bt-shared"><i class="icon ion-share"></i> Compartilhar</button>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>
+
+
+

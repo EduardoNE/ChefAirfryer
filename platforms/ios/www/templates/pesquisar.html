@@ -1,0 +1,33 @@
+<ion-view view-title="Pesquisar" id="pesquisar">
+  <ion-content>
+
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input type="search" placeholder="Pesquisar" ng-model="pesquisa.termo" >
+      </label>
+      <button class="button button-clear bt-buscar" ng-click="filter()">
+        Buscar
+      </button>
+    </div>
+
+    <ion-list class="{{visao.cega}}">
+
+      <div class="padding">
+        <p>Digite o que deseja buscar na caixa acima...</p>
+      </div> 
+
+    </ion-list>
+
+    <ion-list class="{{visao.receitas}}">
+      <ion-item class="item item-thumbnail-left {{receita.filter}}" ng-repeat="receita in geladeira" type="item-text-wrap" href="#/tab/pesquisa/receita/{{receita.id}}">
+        <img ng-src="{{receita.imagem}}">
+        <h2 ng-bind-html="receita.nome"></h2>
+        <p><i class="icon ion-clock"></i> {{receita.tempo}} min</p>
+        <p><i class="icon ion-fork"></i><i class="icon ion-knife"></i> {{receita.like}} pessoas fizeram</p>
+        <i class="icon ion-chevron-right seta"></i>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+</ion-view>
