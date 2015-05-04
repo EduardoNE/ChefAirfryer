@@ -326,11 +326,12 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				item.quantidades.replace(/<br>/gi, "\r\n") + 
 				"\r\n\r\nComo fazer: \r\n" + 
 				item.receita.replace(/<br>/gi, "\r\n") + 
-				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android";
+				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android"+
+				"\r\nhttp://chefairfryer.com.br";
 
 				console.log(text);
 				$cordovaSocialSharing.shareViaWhatsApp(
-					text,  img , "http://chefairfryer.com.br" , 
+					text,  null , null , 
 						function() {console.log('share ok')}, 
 						function(errormsg){alert(errormsg)}
 				)
