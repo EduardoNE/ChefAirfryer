@@ -10,8 +10,7 @@
 	<string>Chef Airfryer</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B1BCBC7C50DD886F62ECB3594B17CAC26AB43673</key>
-		<string>https://github.com/EduardoNE/chefAirfry.git</string>
+
 		<key>B5F28EEB7D4B666A85F5FA82ED7B1EC429357493</key>
 		<string>https://github.com/EduardoNE/chefAirfryer.git</string>
 	</dict>
@@ -19,8 +18,7 @@
 	<string>platforms/ios/Chef Airfryer.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B1BCBC7C50DD886F62ECB3594B17CAC26AB43673</key>
-		<string>../../../../..</string>
+
 		<key>B5F28EEB7D4B666A85F5FA82ED7B1EC429357493</key>
 		<string>../../../..</string>
 	</dict>
@@ -32,14 +30,6 @@
 	<string>B5F28EEB7D4B666A85F5FA82ED7B1EC429357493</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B1BCBC7C50DD886F62ECB3594B17CAC26AB43673</string>
-			<key>IDESourceControlWCCName</key>
-			<string></string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
