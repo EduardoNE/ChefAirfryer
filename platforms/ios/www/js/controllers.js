@@ -13,44 +13,35 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 			clearcache: 'yes',
 			toolbar: 'yes'
 		};
-		console.log("url", window.location.href);
+
 		$ionicPlatform.ready(function() {
-			chamaBemVindo = function() {
-			$http.get('http://bastidor.com.br/airfry/ajax/0/0/0/NumRows')
-				.success(
-					function(data, status, headers, config) {
-						var query = "SELECT * FROM receita";
-						$cordovaSQLite.execute(db, query, []).then(function(res) {
-							console.log('local - pratos-number', res.rows.length);
-							console.log('serv - pratos-number', data.prato);
-							falta = data.prato - res.rows.length;
-							console.log("faltam - ", falta);
-							$scope.updates = falta;
-							if (falta > 0)
-								$scope.hasUpdate = '<span class="badge badge-assertive ud">!</span>';
-								if (res.rows.length == 0) {
-								console.log("Bem Vindo");
-								$state.go("tab.bemVindo", {});
-							}
-						});
-					});
-			};
+			if ($cordovaNetwork.isOnline()) {
 			$analytcs.start();
 			$analytcs.view("Home");
 			var db = $cordovaSQLite.openDB("chefAirfyer");
-			if ($cordovaNetwork.isOnline()) {
-				$http.get('http://bastidor.com.br/airfry/ajax/banner/')
-					.success(function(data, status, headers, config) {
-						$scope.slides = data;
-						$ionicSlideBoxDelegate.update();
-						chamaBemVindo();
-					}).error(function(data, status, headers, config) {
-						console.log('Falhou ', data);
-						console.log('Status ', status);
-					});
+			$http.get('http://bastidor.com.br/airfry/ajax/banner/')
+				.success(function(data, status, headers, config) {
+					$scope.slides = data;
+					$ionicSlideBoxDelegate.update();
+					
+				}).error(function(data, status, headers, config) {
+					console.log('Falhou ', data);
+					console.log('Status ', status);
+				});
 			}
-		})
-		
+
+			chamaBemVindo = function() {
+				var query = "SELECT * FROM receita";
+				$cordovaSQLite.execute(db, query, []).then(function(res) {
+					console.log('local - pratos-number', res.rows.length);
+					if (res.rows.length == 0) {
+						console.log("Bem Vindo");
+						$state.go("tab.bemVindo", {});
+					}
+				});
+			};
+			chamaBemVindo();
+		})		
 		$scope.SendOut = function(id, link) {
 			if (link.indexOf("#") != 0)
 				$cordovaInAppBrowser.open(link, "_blank", options);
@@ -62,6 +53,11 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				});
 			}
 		};
+		$scope.$on('$ionicView.enter', function() {
+			$ionicSlideBoxDelegate.update();
+		});
+			
+		
 	})
 	.controller('UpdateCtrl', function($ionicPlatform, $http, $scope, $cordovaSQLite, $cordovaNetwork, $analytcs) {
 		var attI = 1;
@@ -313,7 +309,7 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 
 				console.log(text);
 				$cordovaSocialSharing.shareViaFacebookWithPasteMessageHint(
-					text,  img , "http://chefairfryer.com.br" , 'Click aqui para usar a receita.', 
+					text,  img , "http://chefairfryer.com.br" , 'Click aqui para copiar a receita e depois cole no campo de compartilhamento.', 
 						function() {console.log('share ok')}, 
 						function(errormsg){alert(errormsg)}
 				)
