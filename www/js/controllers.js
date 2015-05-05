@@ -366,7 +366,7 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				"<img src='"+ img +"'>"+ 
 				item.quantidades.replace(/<br>/gi, "<br>") + 
 				item.receita.replace(/<br>/gi, "<br>") + 
-				"<br><br> Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android<br> http://chefairfryer.com.br";
+				"<br><br> Essa e muitas outras dicas você pode encontrar no App Chef Airfryer para iOS e Android<br> http://chefairfryer.com.br";
 
 				console.log(text);
 				$cordovaSocialSharing.shareViaEmail(text, item.nome,null,null, img, 
@@ -380,7 +380,7 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				var text = item.nome + 
 				item.quantidades.replace(/<br>/gi, "\r\n") + 
 				item.receita.replace(/<br>/gi, "\r\n") + 
-				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android"+
+				"\r\n\r\n Essa e muitas outras dicas você pode encontrar no App Chef Airfryer para iOS e Android"+
 				"\r\nhttp://chefairfryer.com.br";
 
 				console.log(text);
@@ -396,7 +396,7 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				var text = item.nome + 
 				item.quantidades.replace(/<br>/gi, "\r\n") + 
 				item.receita.replace(/<br>/gi, "\r\n") + 
-				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android"+
+				"\r\n\r\n Essa e muitas outras dicas você pode encontrar no App Chef Airfryer para iOS e Android"+
 				"\r\nhttp://chefairfryer.com.br";
 
 				$cordovaSocialSharing.shareViaWhatsApp(
