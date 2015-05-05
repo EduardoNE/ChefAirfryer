@@ -199,6 +199,9 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 					$scope.visao.atualizado = "";
 					$scope.visao.atualizando = "hide";
 					$scope.visao.semInternet = "hide";
+
+					setTimeout($state.go("tab.dash", {}), 4000);
+					
 				}
 				return true;
 			};
@@ -346,6 +349,52 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				"\r\n\r\nIngredientes: \r\n" + 
 				item.quantidades.replace(/<br>/gi, "\r\n") + 
 				"\r\n\r\nComo fazer: \r\n" + 
+				item.receita.replace(/<br>/gi, "\r\n") + 
+				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android"+
+				"\r\nhttp://chefairfryer.com.br";
+
+				$cordovaSocialSharing.shareViaWhatsApp(
+					text,  null , null , 
+						function() {console.log('share ok')}, 
+						function(errormsg){alert(errormsg)}
+				)
+			}
+
+			$scope.email = function() {
+				var img = item.imagem != "data:image/;base64," ? item.imagem : "";
+				var text = 	item.nome + "<br>"+
+				"<img src='"+ img +"'>"+ 
+				item.quantidades.replace(/<br>/gi, "<br>") + 
+				item.receita.replace(/<br>/gi, "<br>") + 
+				"<br><br> Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android<br> http://chefairfryer.com.br";
+
+				console.log(text);
+				$cordovaSocialSharing.shareViaEmail(text, item.nome,null,null, img, 
+						function() {console.log('share ok')}, 
+						function(errormsg){alert(errormsg)}
+				);
+			}
+
+			$scope.facebook = function() {
+				var img = item.imagem != "data:image/;base64," ? item.imagem : "";
+				var text = item.nome + 
+				item.quantidades.replace(/<br>/gi, "\r\n") + 
+				item.receita.replace(/<br>/gi, "\r\n") + 
+				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android"+
+				"\r\nhttp://chefairfryer.com.br";
+
+				console.log(text);
+				$cordovaSocialSharing.shareViaFacebookWithPasteMessageHint(
+					text,  img , "http://chefairfryer.com.br" , 'Click aqui para copiar a receita e depois cole no campo de compartilhamento.', 
+						function() { console.log('share ok') }, 
+						function(errormsg) { alert(errormsg) }
+				)
+			}
+
+			$scope.whatsapp = function() {
+				var img = item.imagem != "data:image/;base64," ? item.imagem : "";
+				var text = item.nome + 
+				item.quantidades.replace(/<br>/gi, "\r\n") + 
 				item.receita.replace(/<br>/gi, "\r\n") + 
 				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android"+
 				"\r\nhttp://chefairfryer.com.br";

@@ -199,6 +199,9 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 					$scope.visao.atualizado = "";
 					$scope.visao.atualizando = "hide";
 					$scope.visao.semInternet = "hide";
+
+					setTimeout($state.go("tab.dash", {}), 4000);
+					
 				}
 				return true;
 			};
