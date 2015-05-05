@@ -106,6 +106,9 @@ angular.module('starter.services', ['ionic','ngCordova'])
     .factory('Categoria', function() {
       var categorias = 
           [{
+              "id":13,
+              "nome": "Amigos do Chef"
+          }, {
               "id":12,
               "nome": "Descubra"
           }, {
@@ -128,7 +131,7 @@ angular.module('starter.services', ['ionic','ngCordova'])
               "nome": "Industrializado"
           }, {
               "id":5,
-              "nome": "Bolinhos e Salgados"
+              "nome": "Salgados e Petiscos"
           }, {
               "id":4,
               "nome": "Doces e Sobremesas"

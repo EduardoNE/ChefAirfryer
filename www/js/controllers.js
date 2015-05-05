@@ -59,11 +59,13 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 			
 		
 	})
-	.controller('UpdateCtrl', function($ionicPlatform, $http, $scope, $cordovaSQLite, $cordovaNetwork, $analytcs) {
+	.controller('UpdateCtrl', function($ionicPlatform, $http, $scope, $cordovaSQLite, $cordovaNetwork) {
 		var attI = 1;
 		var attP = 1;
 		var totI = 1;
 		var totP = 1;
+		var time = 0;
+		var timeout = null;
 
 		$scope.updates = 0;
 		$scope.visao = {};
@@ -72,10 +74,8 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 		$scope.visao.atualizado = "hide";
 		$scope.visao.atualizando = "hide";
 		$scope.visao.semInternet = "hide";
-		$scope.porcent = "Sincronizando...";
+		$scope.porcent = "00:00";
 		$ionicPlatform.ready(function() {
-			$analytcs.start();
-			$analytcs.view("Atualizar");
 			var db = $cordovaSQLite.openDB("chefAirfyer");
 			if ($cordovaNetwork.isOnline()) {
 				$scope.visao.semInternet = "hide";
@@ -111,6 +111,28 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				$scope.visao.atrasado = "hide";
 				$scope.visao.atualizado = "hide";
 				$scope.visao.atualizando = "";
+				
+
+				var timer = function() {
+					time+=1;
+					
+					minutos = Math.floor(time / 60);
+					if(minutos < 10)
+						minutos = "0" + minutos;
+					
+					segundos = time - Math.round(minutos *60);
+					if(segundos < 10)
+						segundos = "0" + segundos;
+					
+					$scope.$apply(function () {
+			            $scope.porcent = (minutos + ":" + segundos);
+			        });
+					
+					timeout = setTimeout(timer, 1000);
+				}
+				
+				timer();
+
 				$http.get('http://bastidor.com.br/airfry/ajax/prato')
 					.success(function(data, status, headers, config) {
 						attP = data.length;
@@ -169,8 +191,9 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 					attI--;
 				else
 					attP--;
-				$scope.porcent = (Math.ceil((100 - ((attI * 100) / totI)) / 2) + Math.ceil((100 - ((attP * 100) / totP)) / 2)) + "%";
+				//$scope.porcent = (Math.ceil((100 - ((attI * 100) / totI)) / 2) + Math.ceil((100 - ((attP * 100) / totP)) / 2)) + "%";
 				if (attI == 0 && attP == 0) {
+					clearTimeout(timeout);
 					$scope.visao.carregando = "hide";
 					$scope.visao.atrasado = "hide";
 					$scope.visao.atualizado = "";
@@ -179,6 +202,7 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				}
 				return true;
 			};
+			
 		})
 	})
 	.controller('ReceitasCtrl', function($ionicPlatform, $scope, $stateParams, $cordovaSQLite, Categoria, $analytcs) {
@@ -305,13 +329,14 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				item.quantidades.replace(/<br>/gi, "\r\n") + 
 				"\r\n\r\nComo fazer: \r\n" + 
 				item.receita.replace(/<br>/gi, "\r\n") + 
-				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android";
+				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android"+
+				"\r\nhttp://chefairfryer.com.br";
 
 				console.log(text);
 				$cordovaSocialSharing.shareViaFacebookWithPasteMessageHint(
 					text,  img , "http://chefairfryer.com.br" , 'Click aqui para copiar a receita e depois cole no campo de compartilhamento.', 
-						function() {console.log('share ok')}, 
-						function(errormsg){alert(errormsg)}
+						function() { console.log('share ok') }, 
+						function(errormsg) { alert(errormsg) }
 				)
 			}
 
@@ -325,7 +350,6 @@ angular.module('starter.controllers', ['ionic', 'starter.controllers', 'starter.
 				"\r\n\r\n Essa e muitas outras receitas você pode encontrar no App Chef Airfryer para iOS e Android"+
 				"\r\nhttp://chefairfryer.com.br";
 
-				console.log(text);
 				$cordovaSocialSharing.shareViaWhatsApp(
 					text,  null , null , 
 						function() {console.log('share ok')}, 

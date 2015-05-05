@@ -3,31 +3,30 @@
     
     <div class="padding">
 
-      <div class="titulo-desc padding">
-        <h3>Bem-vindo ao Chef AirFryer!</h3>
-        <p>Clique no botão abaixo para sincronizar as receitas e desfrutar plenamente do aplicativo sem a necessidade de estar conectado à internet. Este processo pode demorar aproximadamente 2 minutos.</p>
-        <p>Caso este aplicativo apresente algum problema, por favor envie um email para <a href="mailto:app@chefairfryer.com.br">app@chefairfryer.com.br</a></p>
-        <p>Um abraço,<br />
-          Chef AirFryer @chefairfryer</p>
-        <p class="{{visao.atrasado}} text-center numnovas">{{updates}} receitas</p>
-      </div>
-
       <div class="{{visao.carregando}} carregando text-center numnovas">
-        <i class="icon ion-loading-c"></i> Verificando...
+        Verificando...
       </div>
       <div class="{{visao.atrasado}} bt-atualizar">
-        <a ng-click="update()" class="button button-block bt-red">Sincronizar</a>
+        <a ng-click="update()" class="button button-block bt-red">{{updates}} receitas</a>
       </div>
       <div class="{{visao.atualizado}} text-center numnovas">
         Receitas Sincronizadas
       </div>
       <div class="{{visao.atualizando}} text-center numnovas">
-        <i class="icon ion-loading-c"></i> {{porcent}}
+        {{porcent}}
       </div>
       <div class="{{visao.semInternet}}">
         Para sincronizar você precisa estar conectado à internet.
       </div>
-        
+
+      <div class="titulo-desc padding">
+        <h3>Bem-vindo ao Chef AirFryer!</h3>
+        <p>Clique no botão acima para sincronizar as receitas e desfrutar plenamente do aplicativo sem a necessidade de estar conectado à internet. Este processo pode demorar até 5 minutos.</p>
+        <p>Caso precise de alguma ajuda, envie um email para <a href="mailto:app@chefairfryer.com.br">app@chefairfryer.com.br</a></p>
+        <p>Um abraço,<br />
+          Chef AirFryer @chefairfryer</p>
+      </div>
+  
     </div>
 
   </ion-content>
